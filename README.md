@@ -23,7 +23,8 @@ The simple GUI interface should boot
 
 Select the MT4 htm file report on your computer you want to work with   
 
-Select the directory you want the csv and analyzed report to save in  
+Select the directory you want the csv and analyzed report to save in   
+(saved files will have the same name as your input file but will be .xls and .html respectively)     
 
 Click `Run`   
 
