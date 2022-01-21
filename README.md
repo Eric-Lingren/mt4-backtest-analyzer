@@ -19,5 +19,20 @@ Install dependencies
 
 From the root dir, run `python3 main.py`   
 
-The GUI interface should boot   
+The simple GUI interface should boot   
 
+Select the MT4 htm file report you want to work with   
+
+Select the output directory you want the csv and analyzed report to output to   
+
+Click `Run`   
+
+## Screenshots
+
+### GUI Interface
+
+### Input File
+
+### Output Excel File Generated
+
+### Output Report Generated
