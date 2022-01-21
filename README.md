@@ -21,18 +21,18 @@ From the root dir, run `python3 main.py`
 
 The simple GUI interface should boot   
 
-Select the MT4 htm file report you want to work with   
+Select the MT4 htm file report on your computer you want to work with   
 
-Select the output directory you want the csv and analyzed report to output to   
+Select the directory you want the csv and analyzed report to output to   
 
 Click `Run`   
 
 ## Screenshots
 
-### GUI Interface
+### GUI Interface:
+![gui screenshot]('https://user-images.githubusercontent.com/44101756/150452908-a0688987-ffbc-41eb-b185-6e8ffcb3b96c.png')
+### Input File:
 
-### Input File
+### Output Excel File Generated:
 
-### Output Excel File Generated
-
-### Output Report Generated
+### Output Report Generated:
