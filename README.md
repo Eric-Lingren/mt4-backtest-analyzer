@@ -30,7 +30,7 @@ Click `Run`
 ## Screenshots
 
 ### GUI Interface:
-![gui screenshot]('https://user-images.githubusercontent.com/44101756/150452908-a0688987-ffbc-41eb-b185-6e8ffcb3b96c.png')
+![gui screenshot](https://user-images.githubusercontent.com/44101756/150452908-a0688987-ffbc-41eb-b185-6e8ffcb3b96c.png)
 ### Input File:
 
 ### Output Excel File Generated:
