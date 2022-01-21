@@ -1,7 +1,7 @@
 # mt4-backtest-analyzer
 
 
-mt4 backtest analyzer is very user friendly gui based python program which takes any standard mt4 trading platform report and transforms it into 2 files - an excel file with the raw data so it is usable in data science projects, and an outputed HTML report file which is includes useful + relevant charts.
+mt4 backtest analyzer is very user friendly gui based python program which takes any standard mt4 trading platform htm report file and transforms it into 2 new files - an excel file with the raw data so it is usable in data science projects, and an outputed HTML report file which includes enhanced data charts.
 
 ## Dependencies
 
