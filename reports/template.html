@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+        }
+        h1 {
+            font-weight: lighter;
+            margin-bottom: 10px;
+        }
+        .system-stats-row-wrapper {
+            display: flex;
+        }
+        .system-stats-column-wrapper {
+            display: flex;
+            flex-direction: column;
+            margin-left: 100px;
+        }
+        .stats-summary-subheader {
+            font-weight: lighter;
+            margin-top: 15px;
+            margin-bottom: 8px;
+            font-size: 20px;
+        }
+        .summary-text {
+            margin: 2px;
+        }
+        .chart-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+            margin-top: 50px;
+            border-radius: 10px;
+            width: 90%;
+            padding: 10px;
+            /* box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px; */
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 20px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+        }
+        .chart-header {
+            margin-bottom: 0;
+            font-weight: lighter;
+        }
+        .chart-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+        }
+        img {
+            margin: 5px;
+        }
+        @media only screen and (max-width: 1024px){
+            .system-stats-column-wrapper {
+                margin-left: 40px;
+            }
+        }
+        @media only screen and (max-width: 768px){
+            h1{
+                font-size: 20px;
+            }
+            .system-stats-column-wrapper {
+                margin-left: 20px;
+            }
+            .stats-summary-subheader {
+                font-size: 16px;
+            }
+            p {
+                font-size: 12px;
+            }
+            img {
+                width: 600px;
+            }
+        }
+        @media only screen and (max-width: 426px){
+            .system-stats-row-wrapper {
+                flex-direction: column;
+            }
+            .chart-header {
+                font-size: 20px;
+            }
+            img {
+                width: 375px;
+            }
+        }
+        </style>
+</head>
+<body>
+    <h1> Forex Data Analysis Report</h1>
+    <hr style="width: 70%;">
+        <div class='system-stats-row-wrapper'>
+            <div class='system-stats-column-wrapper'>
+                <div>
+                    <h3 class='stats-summary-subheader'> System Stats </h3>
+                    <p class='summary-text'> System Name: {{ system_name }} </p>
+                    <p class='summary-text'> Symbol: {{ symbol }} </p>
+                    <p class='summary-text'> Period: {{ period }} </p>
+                    <p class='summary-text'> Duration: {{ duration }} </p>
+                </div>
+                <div>
+                    <h3 class='stats-summary-subheader'> Profit Stats </h3>
+                    <p class='summary-text'> Gross Profit: ${{ gross_profit }} </p>
+                    <p class='summary-text'> Gross Loss: ${{ gross_loss }} </p>
+                    <p class='summary-text'> Net Profit: ${{ net_profit }} </p>
+                </div>
+                <div>
+                    <h3 class='stats-summary-subheader'> Trade Stats </h3>
+                    <p class='summary-text'> Total Trades: {{ total_trades }} </p>
+                    <p class='summary-text'> Short Positions (won %): {{ short_positions }} </p>
+                    <p class='summary-text'> Long Positions (won %): {{ long_positions }} </p>
+                    <p class='summary-text'> Largest Profit Trade: ${{ largest_profit_trade }} </p>
+                    <p class='summary-text'> Largest Loss Trade: ${{ largest_loss_trade }} </p>
+                    <p class='summary-text'> Average Profit Trade: ${{ average_profit_trade }} </p>
+                    <p class='summary-text'> Average Loss Trade: ${{ average_loss_trade }} </p>
+                </div>
+            </div>
+            <div class='system-stats-column-wrapper'>
+                <div>
+                    <h3 class='stats-summary-subheader'> Data Stats </h3>
+                    <p class='summary-text'> Bars: {{ bars }} </p>
+                    <p class='summary-text'> Ticks Modeled: {{ ticks_modeled }} </p>
+                    <p class='summary-text'> Modelling Quality: {{ modelling_quality }} </p>
+                    <p class='summary-text'> Mismatched Charts Errors: {{ mismatched_charts_errors }} </p>
+                </div>
+                <div>
+                    <h3 class='stats-summary-subheader'> Drawdown Stats </h3>
+                    <p class='summary-text'> Absolute Drawdown: ${{ absolute_drawdown }} </p>
+                    <p class='summary-text'> Maximal Drawdown: ${{ maximal_drawdown }} </p>
+                    <p class='summary-text'> Relative Drawdown: ${{ relative_drawdown }} </p>
+                </div>
+                <div>
+                    <h3 class='stats-summary-subheader'> Consecutive Stats </h3>
+                    <p class='summary-text'> Average Consecutive Wins: {{ average_consecutive_wins }} </p>
+                    <p class='summary-text'> Average Consecutive Losses: {{ average_consecutive_losses }} </p>
+                    <p class='summary-text'> Maximum Consecutive Wins (profit in money): {{ max_consecutive_wins }} </p>
+                    <p class='summary-text'> Maximum Consecutive Losses (loss in money): {{ max_consecutive_losses }} </p>
+                    <p class='summary-text'> Maximal Consecutive Profit (count of wins): ${{ max_consecutive_profit }} </p>
+                    <p class='summary-text'> Maximal Consecutive Loss (count of losses): ${{ max_consecutive_loss }} </p>
+                </div>
+            </div>
+        </div>
+        <div class='chart-container'>
+            <h2 class='chart-header'>Total Account Growth:</h2>
+            <div class='chart-wrapper'>
+                <img src="data:image/jpeg;base64,{{ account_balance_fig_jpeg }}" alt="chart">
+            </div>
+        </div>  
+        <div class='chart-container'>
+            <h2 class='chart-header'>Stats by Month:</h2>
+            <div class='chart-wrapper'>
+                <img src="data:image/jpeg;base64,{{ monthly_profit_fig_jpeg }}" alt="chart">
+                <img src="data:image/jpeg;base64,{{ monthly_trades_fig_jpeg }}" alt="chart">
+            </div>
+        </div>  
+        <!-- <img src="data:image/jpeg;base64,{{ profit_fig_jpeg }}" alt="chart"> -->
+        <div class='chart-container'>
+            <h2 class='chart-header'>Trade Duration in Hours:</h2>
+            <div class='chart-wrapper'>
+                <img src="data:image/jpeg;base64,{{ fig1_jpeg }}" alt="chart">
+                <img src="data:image/jpeg;base64,{{ fig2_jpeg }}" alt="chart">
+                <!-- <img src="data:image/jpeg;base64,{{ fig3_jpeg }}" alt="chart"> -->
+                <img src="data:image/jpeg;base64,{{ fig4_jpeg }}" alt="chart">
+                <!-- <img src="data:image/jpeg;base64,{{ fig5_jpeg }}" alt="chart"> -->
+                <img src="data:image/jpeg;base64,{{ fig6_jpeg }}" alt="chart">
+            </div>
+        </div>
+
+    <h6>Property of Eric Lingren ©2022 </h6>
+</body>
+</html>
